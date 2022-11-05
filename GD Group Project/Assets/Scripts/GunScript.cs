@@ -68,6 +68,12 @@ public class GunScript : PickUP
     public void GunFire()
     {
         currentState = PickUpItemStates.DoYourThing;
+        Instantiate(bulletCloneTemplate);
+
+        if (Input.GetKeyDown("Fire1"))
+        {
+            Instantiate(bulletCloneTemplate,transform.position,Quaternion identity);
+        }
 
     }
 
