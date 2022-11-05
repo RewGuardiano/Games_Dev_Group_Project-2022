@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JoeControlScript : MonoBehaviour,Health
 {
-    enum CharacterStates {Grounded, JumpUp, Falling }
+    enum CharacterStates {Grounded, JumpUp, Falling}
 
     internal Transform myRightHand;
 
@@ -71,6 +71,7 @@ public class JoeControlScript : MonoBehaviour,Health
                 if (shouldWalkBackwards()) walk_backwards();
                 if (shouldTurnLeft()) turn_left();
                 if (shouldTurnRight()) turn_right();
+                if (shouldcrouch()) crouch();
                 if (shouldPickUp()) pickUp();
                 if (shouldUseRight()) useRight();
                 if (shouldFireGun()) FireGun();
@@ -156,6 +157,12 @@ public class JoeControlScript : MonoBehaviour,Health
         return Input.GetKeyDown(KeyCode.T);
     }
 
+
+
+    private void crouch()
+    {
+        joe_animator.SetBool("startcrouching", true);
+    }
     private void pickUp()
     {
     Collider[] allPossiblePickUps = Physics.OverlapSphere(transform.position, 1f);
@@ -179,6 +186,12 @@ public class JoeControlScript : MonoBehaviour,Health
           
         }
     
+    }
+
+   private bool shouldcrouch()
+    {
+
+        return Input.GetKeyDown(KeyCode.E);
     }
 
     private bool shouldPickUp()
