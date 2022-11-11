@@ -158,11 +158,6 @@ public class JoeControlScript : MonoBehaviour,Health
     }
 
 
-
-    private void crouch()
-    {
-        joe_animator.SetBool("startcrouching", true);
-    }
     private void pickUp()
     {
     Collider[] allPossiblePickUps = Physics.OverlapSphere(transform.position, 1f);
@@ -186,12 +181,6 @@ public class JoeControlScript : MonoBehaviour,Health
           
         }
     
-    }
-
-   private bool shouldcrouch()
-    {
-
-        return Input.GetKeyDown(KeyCode.E);
     }
 
     private bool shouldPickUp()
