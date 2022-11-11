@@ -65,7 +65,7 @@ public class GunScript : PickUP
         }
     }
 
-    public void GunFire()
+   /* public void GunFire() // Tried to make the bullet come out of gun// 
     {
         currentState = PickUpItemStates.DoYourThing;
         Instantiate(bulletCloneTemplate);
@@ -75,7 +75,7 @@ public class GunScript : PickUP
             Instantiate(bulletCloneTemplate,transform.position,Quaternion identity);
         }
 
-    }
+    }*/
 
 
 }
